@@ -11,6 +11,12 @@ function createCard(milestone) {
   card.dataset.tag = milestone.tag;
   card.dataset.year = String(milestone.year);
 
+  // Retro window title bar
+  const header = document.createElement('div');
+  header.className = 'card-header';
+  header.innerHTML = `<span>Milestone_${milestone.year}.exe</span><span style="font-family: monospace;">[X]</span>`;
+  card.appendChild(header);
+
   const year = document.createElement('div');
   year.className = 'card__year';
   year.textContent = milestone.yearLabel || String(milestone.year);
